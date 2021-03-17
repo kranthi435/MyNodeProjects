@@ -21,7 +21,7 @@ http.createServer((req,res)=>{
     res.write('writing someything');
     res.end('Ending'+req.url);}
 
-}).listen(PORT,()=>{console.log('Listening on Port:'+PORT)});
+}).listen(PORT,()=>{console.log('Listening on Some Port:'+PORT)});
 
 
 
