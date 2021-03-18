@@ -84,7 +84,22 @@
          console.error('Something went wrong! Errors:', response.errors);
       } 
    };
-   
+
+
+   function searchAndScreenPop() {
+      //Invokes API method
+      sforce.opencti.searchAndScreenPop({ searchParams : '+19282275501',callType : sforce.opencti.CALL_TYPE.INBOUND,  deferred: false, callback : searchCallback });
+   }
+
+
+   var searchCallback = function(response) {
+      if (response.success) {
+         console.log('API method call executed successfully! returnValue:', response.returnValue);
+      } else { 
+         console.error('Something went wrong! Errors:', response.errors);
+      }
+      };
+
    </script>
 </head>
 <body>
@@ -93,5 +108,6 @@
    <button onclick="setSoftphoneItemIcon();">setSoftphoneItemIcon({key:'call'})</button><br/>
    <button onclick="setSoftphoneItemLabel();">setSoftphoneItemLabel({label:'MySoftphone'})</button>
    <button onclick="enableClickToDial();">enableClickToDial()</button>
+   <button onclick="searchAndScreenPop();">searchAndScreenPop</button>
 </body>
 </html>
