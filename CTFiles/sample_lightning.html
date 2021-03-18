@@ -72,6 +72,19 @@
             callback: setSoftphoneItemLabelCallback
          });
       }
+
+      function enableClickToDial() {
+         sforce.opencti.enableClickToDial({callback: callback});
+     }
+
+     var callback = function(response) {
+      if (response.success) {
+         console.log('API method call executed successfully! returnValue:', response.returnValue);
+      } else { 
+         console.error('Something went wrong! Errors:', response.errors);
+      } 
+   };
+   
    </script>
 </head>
 <body>
@@ -79,5 +92,6 @@
    <button onclick="setSoftphonePanelWidth();">setSoftphonePanelWidth({widthPX:500})</button><br/>
    <button onclick="setSoftphoneItemIcon();">setSoftphoneItemIcon({key:'call'})</button><br/>
    <button onclick="setSoftphoneItemLabel();">setSoftphoneItemLabel({label:'MySoftphone'})</button>
+   <button onclick="enableClickToDial();">enableClickToDial()</button>
 </body>
 </html>
